@@ -1,0 +1,23 @@
+{
+  "name": "host-telemetry-mcp",
+  "version": "1.0.0",
+  "description": "Real-time Host Telemetry, GPU (RTX 3060), Systemd Services, and HyperIndex search MCP server for Antigravity",
+  "main": "./dist/index.js",
+  "bin": {
+    "host-telemetry-mcp": "./dist/bin/mcp.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc && chmod +x dist/bin/mcp.js",
+    "start": "node dist/bin/mcp.js"
+  },
+  "author": "DRNZY",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "typescript": "^5.5.4"
+  }
+}
