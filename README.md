@@ -1,18 +1,12 @@
 # host-telemetry-mcp
 
-Real-time host telemetry, GPU metrics, systemd service inspector, and HyperIndex search MCP server for Antigravity and AI agents.
+Model Context Protocol (MCP) server for local system inspection.
 
-## Overview
+## What it does
 
-A Model Context Protocol (MCP) server providing real-time system introspection to local coding assistants.
+Exposes tools for AI agents to query host CPU/RAM metrics, NVIDIA GPU telemetry, and running systemd user services.
 
-## Features
-
-- **Host Vitals**: CPU, RAM, disk, and GPU telemetry (NVIDIA RTX / CUDA).
-- **Service Management**: Inspect and query running systemd user units.
-- **HyperIndex Integration**: Fast local codebase querying.
-
-## Installation
+## Setup
 
 ```bash
 npm install
@@ -21,4 +15,4 @@ npm run build
 
 ## License
 
-MIT
+MIT License. Copyright (c) 2026 Darnell Dijksteel.
