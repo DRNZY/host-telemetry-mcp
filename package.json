@@ -1,15 +1,42 @@
 {
   "name": "host-telemetry-mcp",
-  "version": "1.0.0",
-  "description": "Real-time Host Telemetry, GPU (RTX 3060), Systemd Services, and HyperIndex search MCP server for Antigravity",
+  "version": "1.1.0",
+  "description": "Single source of truth for host CPU/memory/disk/GPU/systemd telemetry. Exposes an MCP stdio server, an HTTP/JSON mode, and a library entry point.",
   "main": "./dist/index.js",
-  "bin": {
-    "host-telemetry-mcp": "./dist/bin/mcp.js"
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./vitals": {
+      "types": "./dist/lib/vitals.d.ts",
+      "default": "./dist/lib/vitals.js"
+    },
+    "./sampler": {
+      "types": "./dist/lib/sampler.d.ts",
+      "default": "./dist/lib/sampler.js"
+    },
+    "./parsers": {
+      "types": "./dist/lib/parsers.d.ts",
+      "default": "./dist/lib/parsers.js"
+    },
+    "./package.json": "./package.json"
   },
+  "bin": {
+    "host-telemetry-mcp": "./dist/bin/mcp.js",
+    "host-telemetry-http": "./dist/bin/http.js"
+  },
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "scripts": {
-    "build": "tsc && chmod +x dist/bin/mcp.js",
-    "start": "node dist/bin/mcp.js"
+    "build": "tsc && chmod +x dist/bin/mcp.js dist/bin/http.js",
+    "start": "node dist/bin/mcp.js",
+    "start:http": "node dist/bin/http.js",
+    "test": "tsc -p tsconfig.test.json && node --test dist-test/test/*.test.js",
+    "pretest": "tsc"
   },
   "author": "DRNZY",
   "license": "MIT",
